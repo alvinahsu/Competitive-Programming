@@ -21,7 +21,7 @@ if numArgs < 2:
 	exit(1)
 
 contestTypes = {"AC" : "AtCoder", "CF" : "CodeForces", "US" : "USACO", "LC" : "LeetCode"}
-
+	
 currContestType = argList[1]
 currContestNum = argList[2]
 
@@ -48,14 +48,6 @@ if not contestFolderExists:
 
 now = datetime.now()
 dateTime = now.strftime("%d/%m/%Y %H:%M:%S")
-headerInfo = '''\
-/*
-*  File: {fname}
-*  Author: Alvin hsu 
-*  Date: {date}
-*/
-
-'''.format(fname=contestName, date=dateTime)
 
 templatePath = '/Users/alvinhsu/Coding/Contests/Templates/main.cpp'
 templateFile = open(templatePath, "r")
@@ -63,6 +55,14 @@ templateText = templateFile.read()
 
 #create template files (will throw error if one of the file exists)
 for i in range(3, numArgs+1):
+	headerInfo = '''\
+/*
+*  File: {fname}
+*  Author: Alvin Hsu 
+*  Date: {date}
+*/
+
+'''.format(fname=contestName+argList[i], date=dateTime)
 	fileName = argList[i] + ".cpp"
 	filePath = contestFolderNamePath + '/' + fileName
 	
@@ -74,8 +74,3 @@ for i in range(3, numArgs+1):
 		createdFile.write(templateText)
 	else:
 		print(fileName + " already exists")
-		
-
-
-
-

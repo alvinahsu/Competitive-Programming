@@ -1,9 +1,3 @@
-/*
-*  File: CF863A
-*  Author: Alvin Hsu 
-*  Date: 04/04/2023 18:36:29
-*/
-
 #include <bits/stdc++.h>
 using namespace std;
 
