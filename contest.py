@@ -58,7 +58,7 @@ for i in range(3, numArgs+1):
 	headerInfo = '''\
 /*
 *  File: {fname}
-*  Author: Alvin Hsu 
+*  Author: Alvin Hsu
 *  Date: {date}
 */
 
