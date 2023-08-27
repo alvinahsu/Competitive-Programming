@@ -3,6 +3,7 @@
 import os
 import sys
 from datetime import datetime
+import shutil
 
 # Arg[1] : Practice type
 # CF = CodeForces
@@ -20,7 +21,7 @@ if numArgs < 2:
 	print("At Least Two Arguments Are Required (Practice Type and Number)")
 	exit(1)
 
-practiceTypes = {"AC" : "AtCoder", "CF" : "CodeForces", "US" : "USACO", "LC" : "LeetCode"}
+practiceTypes = {"AC" : "AtCoder", "CF" : "CodeForces", "USACO" : "USACO", "LC" : "LeetCode", "UCSD" : "UCSD"}
 	
 currPracticeType = argList[1]
 currPracticeNum = argList[2]
@@ -47,11 +48,16 @@ if not practiceFolderExists:
 	os.mkdir(practiceFolderNamePath)
 
 now = datetime.now()
-dateTime = now.strftime("%d/%m/%Y %H:%M:%S")
+dateTime = now.strftime("%m/%d/%Y %H:%M:%S")
 
 templatePath = '/Users/alvinhsu/Coding/Practice/Templates/main.cpp'
 templateFile = open(templatePath, "r")
 templateText = templateFile.read()
+
+if practiceTypes[currPracticeType] == "USACO":
+	templateUsacoMakefile = '/Users/alvinhsu/Coding/Practice/Templates/UsacoMakefile'
+	shutil.copy('/Users/alvinhsu/Coding/Practice/Templates/UsacoMakefile', practiceFolderNamePath+'/Makefile')
+	os.mkdir(practiceFolderNamePath+'/data')
 
 #create template files (will throw error if one of the file exists)
 for i in range(3, numArgs+1):

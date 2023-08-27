@@ -1,0 +1,33 @@
+usaco = ~/Coding/usaco.py
+current_dir = $(shell pwd)
+dataA_dir = $(current_dir)/data/A
+dataB_dir = $(current_dir)/data/B
+dataC_dir = $(current_dir)/data/C
+INA = $(shell ls $(dataA_dir)/*.in)
+INB = $(shell ls $(dataB_dir)/*.in)
+INC = $(shell ls $(dataC_dir)/*.in)
+
+dataA_out = $(dataA_dir)/A.out
+dataB_out = $(dataB_dir)/B.out
+dataC_out = $(dataC_dir)/C.out
+
+A:
+	@for file in $(INA); do \
+		./A < $$file > $(dataA_out); \
+		python3 $(usaco) $$file $(dataA_out);\
+	done
+
+B:
+	@for file in $(INB); do \
+		./B < $$file > $(dataB_out); \
+		python3 $(usaco) $$file $(dataB_out);\
+	done
+	
+C:
+	@for file in $(INC); do \
+		./C < $$file > $(dataC_out); \
+		python3 $(usaco) $$file $(dataC_out);\
+	done
+		
+
+.PHONY: A B C
