@@ -1,21 +1,7 @@
-/**
- * File: DSU.h
- * Author: Alvin Hsu
- * 
- * Description: Disjoint Set Union with path compression (union by size).
- * Time Complexity: O(n)
- * 
- * Methods:
- *  DSU (constructor): Sets array sizes & values of parents and size vectors
- *  find: Finds the parent of current node, sets as it traverses upwards
- *  merge: Merges two nodes into one set (union by size), returns if successful
- *  sameSet: Returns if two nodes are part of the same set
- *  getSize: Returns the size the set that the node pertains to
- */
-
 #include <bits/stdc++.h>
 using namespace std;
 
+// O(n)
 struct DSU {
 	vector<int> p, s;
 	DSU(int size) : p(size), s(size, 1) { 
