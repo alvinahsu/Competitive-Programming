@@ -36,13 +36,17 @@
 				for (auto &[nxt,j] : g[curr]){
 					if (!vis[nxt]){
 						dfs(nxt);
+						//can only cut vertices if their size is 3
 						if (sz[nxt] == 3){
 							ans.push_back(j);
-							sz[nxt] = 0;
 						}
-						sz[curr] += sz[nxt];
+						else {
+							sz[curr] += sz[nxt];
+						}
 					}
 				}
+				//should have cut all vertices that pertain to one branch
+				//for this to be one branch, it needs to have <= 3 vertices
 				if (sz[curr] > 3){
 					ok = false;
 				}

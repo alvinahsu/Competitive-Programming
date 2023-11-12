@@ -17,15 +17,6 @@ const int inf = (int)1e9;
 int main(){
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-	//contiguous interval used to move all those elements around
-	//dp[i][j] = minimum cost using element up to i, with i not being in an interval and having
-	//at most j intervals
-	
-	//if c[i] < c[i-1], if i-1 was not in an interval (which means it is fixed)
-	//dp[i][j] = min(dp[i][j], dp[i-1][j])
-	
-	//see where the previous interval ends
-	//dp[i][j] = min(d[i][j], dp[k][j-1] + j - i - 1)
 	int t;
 	cin >> t;
 	while(t--){

@@ -27,30 +27,15 @@ int main(){
 			cin >> v[i];
 			pos[v[i]] = i;
 		}
-		if (pos[1] == 1){
-			cout << 2 << " " << pos[n] << '\n';
+		if (pos[n] < min(pos[1], pos[2])){
+			cout << min(pos[1], pos[2])  << " " << pos[n] << '\n';
 		}
-		else if (pos[1] == n){
-			cout << n-1 << " " << pos[n] << '\n';
+		else if (pos[n] > max(pos[1], pos[2])){
+			cout << max(pos[1], pos[2]) <<  " " << pos[n] << '\n';
 		}
 		else {
-			if (pos[n] > pos[2] && pos[2] > pos[1]){
-				cout << pos[2] << " " << pos[n] << '\n';
-			}
-			else if (pos[n] < pos[2] && pos[2] < pos[1]){
-				cout << pos[2] << " " << pos[n] << '\n';
-			}
-			else {
-				if ((pos[n] > pos[2] && pos[n] < pos[1]) || 
-					(pos[n] < pos[2] && pos[n] > pos[1])){
-					cout << 1 << " " << 1 << '\n';
-				}
-				else {
-					cout << pos[1] << " " << pos[n] << '\n';
-				}
-			}
+			cout << "1 1" << '\n';
 		}
-		
 	}
 	return 0;
 }

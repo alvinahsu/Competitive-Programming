@@ -24,15 +24,15 @@ int main(){
 	for (auto &a : v){
 		cin >> a;
 	}
-	long long ans = 0, sum = 0;
 	dp[1] = 1;
 	for (int i = 0; i < n; i++){
-		dp[i] = 0;
-		sum += v[i];
-		if (dp[i+1]) ans = max(ans, sum - i);
-		dp |= dp << v[i];
+		dp |= (dp >> (i+1) << (i + 1 + v[i]));
 	}
-	for (int i = n; i <= 2 * n; i++){
+	long long ans = 0, sum = 0;
+	for (int i = 1; i < N; i++){
+		if (i - 1 < n){
+			sum += v[i-1];
+		}
 		if (dp[i]){
 			ans = max(ans, sum - i + 1);
 		}

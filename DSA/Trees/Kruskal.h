@@ -36,6 +36,7 @@ vector<Edge> edges;
 int ans = 0;
 vector<Edge> result;
 
+//O(NlogM)
 vector<int> kruskal(){
 	DSU dsu(n);
 	sort(edges.begin(), edges.end());

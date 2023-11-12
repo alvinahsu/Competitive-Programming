@@ -26,12 +26,12 @@ int main(){
 			cin >> a;
 		}
 		sort(v.begin(), v.end());
-		if (v[0] < 0 || v[0] == v.back()){
+		if (v[0] < 0){
 			cout << v[0] << '\n';
-			continue;
 		}
-		cout << v.back() << '\n';
-		
+		else {
+			cout << v[n-1] << '\n';
+		}
 	}
 	return 0;
 }

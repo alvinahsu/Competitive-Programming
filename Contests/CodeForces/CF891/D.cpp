@@ -29,7 +29,7 @@ int main(){
 			cin >> b[i];
 		}
 		vector<pair<int,int>> diff(n);
-		int mx = -1e9+5;
+		int mx = INT_MIN;
 		for (int i = 0; i < n; i++){
 			diff[i] = {a[i] - b[i], i};
 			mx = max(mx, diff[i].first);

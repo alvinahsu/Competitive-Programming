@@ -48,9 +48,9 @@ int main(){
 			//cannot reach any segment
 			if (e.second == -2){
 				cnt--;
-				if (!cnt) mx = -1;
+				if (!cnt) mx = 0;
 			}
-			//current end of teleport segment
+			//reachable segment
 			else if (e.second == -1){
 				cnt++;
 				mx = max(mx, e.first);

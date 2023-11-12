@@ -20,7 +20,7 @@ if numArgs < 2:
 	print("At Least Two Arguments Are Required (Contest Type and Number)")
 	exit(1)
 
-contestTypes = {"AC" : "AtCoder", "CF" : "CodeForces", "US" : "USACO", "LC" : "LeetCode"}
+contestTypes = {"AC" : "AtCoder", "CF" : "CodeForces", "US" : "Usaco", "LC" : "LeetCode", "GO" : "Google"}
 	
 currContestType = argList[1]
 currContestNum = argList[2]
@@ -47,7 +47,7 @@ if not contestFolderExists:
 	os.mkdir(contestFolderNamePath)
 
 now = datetime.now()
-dateTime = now.strftime("%d/%m/%Y %H:%M:%S")
+dateTime = now.strftime("%m/%d/%Y %H:%M:%S")
 
 templatePath = '/Users/alvinhsu/Coding/Contests/Templates/main.cpp'
 templateFile = open(templatePath, "r")

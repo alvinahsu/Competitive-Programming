@@ -13,9 +13,6 @@ using namespace std;
 #define dbg(...)
 #endif
 
-#include <bits/stdc++.h>
-using namespace std;
-
 int main(){
 	ios::sync_with_stdio(false);
 	cin.tie(0);
@@ -24,15 +21,9 @@ int main(){
 	while(t--){
 		long long n;
 		cin >> n;
-		int ans = 1, curr = 0;
-		for (int i = 1; i <= 1e4; i++){
-			if (n%i == 0) curr++;
-			else {
-				curr = 0;
-			}
-			ans = max(ans, curr);
-		}
-		cout << ans << '\n';
+		int i = 1;
+		while(n%(i+1)==0) i++;
+		cout << i << '\n';
 		
 	}
 	return 0;

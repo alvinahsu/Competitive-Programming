@@ -25,9 +25,9 @@ int main(){
 		for (int i = 1; i <= n; i++){
 			int x;
 			cin >> x;
-			if (x == i) ans++;
+			ans += x == i;
 		}
-		cout << (ans / 2) + (ans%2) << '\n';
+		cout << (ans+1)/2 << '\n';
 	}
 	return 0;
 }

@@ -15,7 +15,7 @@ vector<int> prefix_function(string s) {
     return lps;
 }
 
-vector<int>ans;
+bool found = false;
 // returns matches in vector ans in 0-indexed
 void kmp(vector<int> lps, string s, string p) {
     int psz = p.size(), sz = s.size();
@@ -30,7 +30,7 @@ void kmp(vector<int> lps, string s, string p) {
         if(j == psz) {
             j = lps[j - 1];
             // pattern found in string s at position i-psz+1
-            ans.push_back(i - psz + 1);
+            found = 1;
         }
     }
 }
