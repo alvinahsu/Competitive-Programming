@@ -36,3 +36,24 @@ void dfs(int u, int p){
 	}
 	color[u] = 2;
 }
+
+/*
+function<void(int,int)> dfs = [&](int u, int p){
+	if (color[u] == 2) return;
+	if (color[u] == 1){
+		cycle[p] = 1;
+		while(p != u){
+			p = par[p];
+			cycle[p] = 1;
+		}
+		return;
+	}
+	par[u] = p;
+	color[u] = 1;
+	for (auto v : g[u]){
+		if (v == p) continue;
+		dfs(v,u);
+	}
+	color[u] = 2;
+};
+*/
