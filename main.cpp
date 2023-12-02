@@ -16,6 +16,5 @@ int main(){
 	freopen("leftout.out", "w", stdout);
     #endif
     
-    
     return 0;
 }
